@@ -7,12 +7,12 @@
     $ma_nhanvien = $_GET['mamh'];
 
     // Bước 01: Kết nối Database Server
-    $conn = mysqli_connect('localhost','root','','dhtl_danhba');
+    $conn = mysqli_connect('localhost','root','','1951060874_dhtl');
     if(!$conn){
         die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
     }
     // Bước 02: Thực hiện truy vấn
-    $sql = "DELETE FROM monhoc WHERE ma_nhanvien = '$ma_nhanvien'";
+    $sql = "DELETE FROM monhoc WHERE mamh = '$ma_nhanvien'";
 
     $number = mysqli_query($conn,$sql);
 

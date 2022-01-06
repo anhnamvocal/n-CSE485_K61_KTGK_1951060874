@@ -13,65 +13,45 @@
     
     <main>
     <div class="container">
-        <h5 class="text-center text-primary mt-5">Thêm mới Danh bạ nhân viên</h5>
+        <h5 class="text-center text-primary mt-5">Sua mới Học Sinh</h5>
         <!-- Form thêm Dữ liệu nhân viên -->
-        <form action="process-add-employee.php" method="post">
+        <form action="process_add_student.php" method="post">
             <div class="form-group">
-                <label for="txtHoTen">Họ và tên</label>
-                <input type="text" class="form-control" id="txtHoTen" name="txtHoTen" placeholder="Nhập họ tên">
+                <label for="txtHoTen">Mã Môn Học</label>
+                <input type="text" class="form-control" id="txtMaMonHoc" name="txtMaMonHoc" placeholder="Nhập mã môn học">
                 <!-- <small id="txtHoTenHelp" class="form-text text-muted">Có thể dùng nó hiển thị thông báo lỗi hoặc gợi ý</small> -->
             </div>
             
             <div class="form-group">
-                <label for="txtChucVu">Chức vụ</label>
-                <input type="text" class="form-control" id="txtChucVu" name="txtChucVu" placeholder="Nhập chức vụ">
+                <label for="txtChucVu">Tên Môn Học</label>
+                <input type="text" class="form-control" id="txtTenMonHoc" name="txtTenMonHoc" placeholder="Nhập Tên môn học">
                 <!-- <small id="txtHoTenHelp" class="form-text text-muted">Có thể dùng nó hiển thị thông báo lỗi hoặc gợi ý</small> -->
             </div>
 
             <div class="form-group">
-                <label for="txtSoMayBan">Số máy bàn</label>
-                <input type="tel" class="form-control" id="txtSoMayBan" name="txtSoMayBan" placeholder="Nhập số máy bàn">
+                <label for="txtSoMayBan">Số Tín Chỉ</label>
+                <input type="text" class="form-control" id="txtSoTinChi" name="txtSoTinChi" placeholder="Nhập số tín chỉ">
                 <!-- <small id="txtHoTenHelp" class="form-text text-muted">Có thể dùng nó hiển thị thông báo lỗi hoặc gợi ý</small> -->
             </div>
             <div class="form-group">
-                <label for="txtSoDiDong">Số di động</label>
-                <input type="tel" class="form-control" id=txtSoDiDong" name="txtSoDiDong" placeholder="Số di động">
+                <label for="txtSoDiDong">Số Tiết Lý Thuyết</label>
+                <input type="text" class="form-control" id="txtSoTietLyThuyet" name="txtSoTietLyThuyet" placeholder="Nhập Số tiết lý thuyết">
                 
             </div>
             <div class="form-group">
-                <label for="txtEmail">Email</label>
-                <input type="email" class="form-control" id="txtEmail" name="txtEmail" placeholder="Nhập email">
+                <label for="txtEmail">Số Tiết Bài tập</label>
+                <input type="text" class="form-control" id="txtSoTietBaiTap" name="txtSoTietBaiTap" placeholder="Nhập Số Tiết Bài Tập">
                
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect2">Đơn vị</label>
-                <select class="form-control" id="cboDonVi" name="cboDonVi">
-                    <!-- Truy vấn dữ liệu để Hiển thị lựa chọn Đơn vị -->
-                    <?php 
-                        // Bước 01: Kết nối Database Server
-                        $conn = mysqli_connect('localhost','root','','dhtl_danhba');
-                        if(!$conn){
-                            die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
-                        }
-                        // Bước 02: Thực hiện truy vấn
-                        $sql = "SELECT * FROM db_donvi";
-
-                        $result = mysqli_query($conn,$sql);
-
-                        // Bước 03: Xử lý kết quả truy vấn
-                        if(mysqli_num_rows($result)){
-                            while($row = mysqli_fetch_assoc($result)){
-                    ?>
-                                <option value="<?php echo $row['ma_donvi']; ?>"><?php echo $row['ten_donvi']; ?></option>
-                    <?php
-                            }
-                        }
-
-                        // Bước 03: Đóng kết nối
-                        mysqli_close($conn);
-                    ?>
+                <label for="txtEmail">Số Tiết Thực Hành</label>
+                <input type="text" class="form-control" id="txtSoTietThucHanh" name="txtSoTietThucHanh" placeholder="Nhập số tiets thực hành">
                
-                </select>
+            </div>
+            <div class="form-group">
+                <label for="txtEmail">Số Giờ Tự Học</label>
+                <input type="text" class="form-control" id="txtSoGioTuHoc" name="txtSoGioTuHoc" placeholder="Nhập Số Giờ Tự Học">
+               
             </div>
             <button type="submit" class="btn btn-primary mt-3">Lưu lại</button>
         </form>
